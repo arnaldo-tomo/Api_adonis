@@ -15,7 +15,7 @@ export default class PessoasController {
   }
 
   async show() {
-    const all = await Pessoa.all()
+    const all = await User.all()
     return all
   }
 
