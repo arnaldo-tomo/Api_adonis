@@ -15,8 +15,8 @@ export default class PessoasController {
   }
 
   async show() {
-    const all = await User.all()
-    return all
+    const all1 = await User.all()
+    return all1
   }
 
   async destroy({ request }: HttpContext) {
