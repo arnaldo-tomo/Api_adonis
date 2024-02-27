@@ -1,10 +1,13 @@
 import { DateTime } from 'luxon'
-import { BaseModel, belongsTo, column } from '@adonisjs/lucid/orm'
+import { BaseModel, belongsTo, column, hasOne } from '@adonisjs/lucid/orm'
+import { BelongsTo, HasOne } from '@adonisjs/lucid/types/relations'
+import User from './user.js'
 
 export default class Pessoa extends BaseModel {
   update() {
     throw new Error('Method not implemented.')
   }
+
   @column({ isPrimary: true })
   declare id: number
 
@@ -22,7 +25,4 @@ export default class Pessoa extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   declare updatedAt: DateTime
-
-  @belongsTo(() => Pessoa)
-
 }
